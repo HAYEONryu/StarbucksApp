@@ -1,0 +1,153 @@
+header{
+    background-color: #f6f5f0;
+}
+header > .inner{ /*해더의 자식요소인 inner부분만 적용 */
+    height:120px;
+}
+header .logo{ 
+    /*가운데 배치하는 법!*/
+    position: absolute; /* 부모요소를 기준으로 배치하겠다는 의미 부모는 relative이여야 한다 */
+    top:0;
+    bottom: 0;
+    height:75px;
+    margin: auto;
+}
+header .sub-menu{
+    display: flex;
+    position: absolute;
+    top: 10px;
+    right:0;
+}
+header .sub-menu ul.menu{
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+}
+header .sub-menu ul.menu li{
+    position: relative;
+}
+header .sub-menu ul.menu li::before{/*구분선 만들기 : 가상요소 선택자*/
+    content:""; /*필수요소*/
+    width: 1px;
+    height: 12px;
+    background-color: #e5e5e5;
+    position: absolute; /*포지션이 absolute이면 display: block이 자동으로 적용된다. */
+    top:0;
+    bottom: 0;
+    margin: auto;
+}
+header .sub-menu ul.menu li:first-child:before{/*first-child-> 가장 왼쪽에 있는 구분선 삭제*/
+    display: none;
+}
+header .sub-menu ul.menu li a{
+    background-color: white;
+    font-size: 12px;
+    padding: 11px 16px;
+    color: #656565;
+    display: block; /*위아래 패딩을 넣어주기 위해 블럭으로 바꿈. 인라인은 위아래 여백을 줄 수가 없기 때문 */
+}
+header .sub-menu ul.menu li a:hover{
+    color:#000;
+}
+header .sub-menu .search{
+    height: 34px;
+    position: relative;
+}
+header .sub-menu .search input{
+    height: 34px;
+    width: 36px;
+    padding: 4px 10px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    color: #777;
+    border-radius: 5px;
+    outline: none;
+    box-sizing: border-box;
+    transition: width 0.4s;
+}
+header .sub-menu .search input:focus{
+    width: 190px;
+    border-color: #669900;
+}
+header .sub-menu .search .material-icons{
+    /*수직 가운데 맞춤 */
+    height: 24px;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    margin: auto;
+    transition: all 0.4s;
+    right:5px;
+}
+header .sub-menu .search.focused .material-icons{
+    opacity: 0;
+}
+/* 메인 메뉴 */
+header .main-menu{
+    position: absolute;
+    display: flex;
+    bottom: 0;
+    right: 0;
+    z-index: 1; 
+}
+header .main-menu .item{
+    
+}
+header .main-menu .item .item__name{
+    padding: 10px 20px 34px 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+}
+header .main-menu .item:hover .item__name{
+    background-color: #2c2a29;
+    color: #669900;
+    border-radius: 6px 6px 0 0;
+}
+
+header .main-menu .item .item__contents{
+    width: 100%;
+    position: fixed;
+    left: 0;
+    display: none;
+}
+header .main-menu .item:hover .item__contents{
+    display: block;
+}
+
+header .main-menu .item .item__contents .contents__menu{
+    background-color: #2c2a29;
+}
+header .main-menu .item .item__contents .contents__menu > ul{
+    display: flex;
+    padding: 20px 0;
+}
+header .main-menu .item .item__contents .contents__menu > ul > li{
+    width: 220px;
+}
+header .main-menu .item .item__contents .contents__menu > ul > li h4 {
+    padding: 3px 0 12px 0;
+    font-size: 14px;
+    color: #fff;
+  }
+header .main-menu .item .item__contents .contents__menu > ul > li ul li {
+    padding: 5px 0;
+    font-size: 12px;
+    color: #999;
+    cursor: pointer;
+}
+header .main-menu .item .item__contents .contents__menu > ul > li ul li:hover {
+    color: #669900;
+}
+
+header .main-menu .item .item__contents .contents__texture{
+    padding: 26px 0;
+    font-size: 12px;
+    background-image: url("../images/main_menu_pattern.jpg");
+}
+header .main-menu .item .item__contents .contents__texture h4{
+    color: #999;
+    font-weight: 700;
+} 
+header .main-menu .item .item__contents .contents__texture p{
+    color: #669900;
+    margin: 4px 0 14px;
+} 

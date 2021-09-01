@@ -1,0 +1,21 @@
+body{
+    font-family: 'Nanum Gothic', sans-serif;
+    color: #333333;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4;
+}
+img{
+    display:block;
+    /* 이미지는 원래 글자처럼(inline) 취급되지만 블락으로 취급하겠다는 선언 */
+}
+a{
+    text-decoration: none;
+}
+.inner{
+    width:1100px;
+    margin: 0 auto;
+    position: relative;
+}
+
+
